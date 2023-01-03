@@ -3,11 +3,10 @@
 
 
 int main(){
-   char first[] = "Hello";
-   char second[] = " World";
-   char final[12];
-   strcpy_t(first,final);
-   printf("%s", final);
+   int x = 12;
+   
+   decToBinConverter(x);
+   
     return 0;
 }
 
