@@ -1,17 +1,3 @@
-#include <stdio.h>
-<<<<<<< HEAD
-#include "master_tlib.h"
-
-
-int main(){
-   int x = 12;
-   
-   decToBinConverter(x);
-   
-    return 0;
-}
-
-=======
 #include "tkklib.h"
 int main(int argc,char *argv[]){
     char test[] = "321";
@@ -28,4 +14,4 @@ int main(int argc,char *argv[]){
     printf("%d",x);
     return 0;
 }
->>>>>>> 4773003 (Library Update)
+
