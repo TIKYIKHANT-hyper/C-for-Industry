@@ -18,4 +18,5 @@ void reverse(const char *const sPtr);
 int c2i(const char ch);
 void strclear(char *str);
 int s2i(char *str,int count);
-
+int strchr_t(const char *str,const char ch,const int count);
+INDEXES find_allch(char *str,char ch,int count);

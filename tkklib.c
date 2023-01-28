@@ -2,7 +2,12 @@
 // Created by Ti Kyi Khant on 1/20/2023.
 //
 #include <stdio.h>
-
+#define INDEXES_MAX 100
+typedef struct{
+    int status;
+    int indexes[INDEXES_MAX];
+    int indexes_size;
+} INDEXES;
 int strlen_t(const char *s){
     int x = 0;
     for(; *s != '\0'; s++){
@@ -54,7 +59,7 @@ void strcon_t(char *s1,const char *s2){
 
 void strcpy_t(const char *origin , char *target){
     for(;(*target = *origin) != '\0'; target++,origin++){
-        ;
+
     }
 }
 
@@ -162,4 +167,34 @@ int s2i(char *str,int count){
         res += pow_t(10,count - 1) * c2i(*str);
     }
     return res;
+}
+
+int strchr_t(const char *str,const char ch,const int count){
+    int i = 0;
+    while(str[i] != '\0' && i < count){
+        if(str[i] == ch){
+            return i;
+        }
+        else{
+            i++;
+        }
+    }
+    return -1;
+}
+
+INDEXES find_allch(char *str,char ch,int count){
+    INDEXES indexes;
+    indexes.status = 0;
+    int strcounter = 0;
+    int fillcounter = 0;
+    while(str[strcounter] != '\0' && strcounter < count){
+        if(str[strcounter] == ch){
+            indexes.indexes[fillcounter++] = strcounter;
+            indexes.status = 1;
+        }
+            strcounter++;
+
+    }
+    indexes.indexes_size = fillcounter;
+    return indexes;
 }

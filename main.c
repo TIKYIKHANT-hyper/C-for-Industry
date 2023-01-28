@@ -1,17 +1,14 @@
 #include "tkklib.h"
+#include <stdio.h>
 int main(int argc,char *argv[]){
-    char test[] = "321";
-    /*char *ptr = test;
-    int z = 0;
-    int count = 3;
-    for(; *ptr != '\0'; ptr++,count--){
-        printf("%d", c2i(*ptr));
-        z += pow_t(10, count -1) * c2i(*ptr);
+    INDEXES result;
+    char test[100] = "Hello*Ti*Kyi*Khant";
+    result = find_allch(test,'*', strlen_t(test));
+    if(result.status){
+    for(int i = 0; i < result.indexes_size; i++){
+        printf(" %d ",result.indexes[i]);
     }
-    printf("%d",z);
-     */
-    int x = s2i(test,3);
-    printf("%d",x);
+    }
     return 0;
 }
 
