@@ -237,3 +237,39 @@ void strip_t(const char *origin, char *target,const int count){
         target[innerctr] = '\0';
     }
 }
+
+int strncmp_t(char *first,char *second,int firstlen,int secondlen,int startindex){
+    if(secondlen > firstlen){
+        return 1;
+    }
+    for(int i = 0; i < secondlen; i++){
+        if(first[startindex+i] != second[i]){
+            return 1;
+        }
+    }
+    return 0;
+}
+
+INDEXES findAllstr_t(char *target,char *str){
+    INDEXES result,data;
+    int i;
+    int si = 0;
+    data.status=0;
+    result = find_allch(target,str[0], strlen_t(target));
+    if(result.status){
+        for(i = 0; i < result.indexes_size; i++){
+            int startindex = result.indexes[i];
+            int status = strncmp_t(target,str, strlen_t(target), strlen_t(str),startindex);
+            if(status==0){
+                data.indexes[si++] = startindex;
+                data.status = 1;
+            }
+
+        }
+    }
+    else{
+        data.status = 0;
+    }
+    data.indexes_size = si;
+    return data;
+}

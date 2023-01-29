@@ -1,10 +1,15 @@
 #include "tkklib.h"
 #include <stdio.h>
 int main(int argc,char *argv[]){
-    char first[] = "   Hello from GCC     ";
-    char second[50] = {"\0"};
-    strip_t(first,second, strlen_t(first));
-    printf("%sThis is after space",second);
+
+    INDEXES mytest;
+    char targetstr[] = "I am am amogus and sus am";
+    mytest = findAllstr_t(targetstr,"am");
+    for(int i = 0; i < mytest.indexes_size; i++){
+        printf("%d \t",mytest.indexes[i]);
+    }
+
+
     return 0;
 }
 
