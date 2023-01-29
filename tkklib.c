@@ -273,3 +273,15 @@ INDEXES findAllstr_t(char *target,char *str){
     data.indexes_size = si;
     return data;
 }
+
+int strchrr_k(const char *str,const char ch,int count){
+    int i = count - 1;
+    while(str[i] != '\0'){
+        if(str[i] == ch){
+            return i;
+        }
+        else{
+            i++;
+        }
+    }
+}
