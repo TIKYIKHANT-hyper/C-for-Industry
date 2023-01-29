@@ -193,8 +193,47 @@ INDEXES find_allch(char *str,char ch,int count){
             indexes.status = 1;
         }
             strcounter++;
-
     }
     indexes.indexes_size = fillcounter;
     return indexes;
+}
+
+void lstrip_t(const char *origin, char *target,const int count){
+    int upperctr = 0;
+    int innerctr = 0;
+    while(origin[upperctr] == ' '){
+        upperctr++;
+    }
+    for(; innerctr < count - upperctr; innerctr++){
+        target[innerctr] = origin[upperctr+innerctr];
+    }
+}
+void rstrip_t(const char *origin, char *target,const int count){
+    int upperctr = strlen_t(origin) - 1;
+    while(origin[upperctr] == ' '){
+        upperctr--;
+    }
+    int innerctr;
+    for(innerctr = 0; innerctr <= upperctr && innerctr < count; innerctr++){
+        target[innerctr] = origin[innerctr];
+    }
+    target[innerctr] = '\0';
+}
+
+void strip_t(const char *origin, char *target,const int count){
+    int lctr = 0;
+    int rctr = strlen_t(origin) - 1;
+    int innerctr;
+    while(origin[lctr] == ' '){
+        lctr++;
+    }
+    while(origin[rctr] == ' '){
+        rctr--;
+    }
+    for(innerctr = 0; lctr <= rctr && innerctr < count; innerctr++,lctr++){
+        target[innerctr] = origin[lctr];
+    }
+    for(;innerctr < strlen_t(target); innerctr++) {
+        target[innerctr] = '\0';
+    }
 }
