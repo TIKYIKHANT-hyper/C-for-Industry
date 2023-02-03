@@ -274,7 +274,7 @@ INDEXES findAllstr_t(char *target,char *str){
     return data;
 }
 
-int strchrr_k(const char *str,const char ch,int count){
+int strchrr_t(const char *str,const char ch,int count){
     int i = count - 1;
     while(str[i] != '\0'){
         if(str[i] == ch){
@@ -283,5 +283,32 @@ int strchrr_k(const char *str,const char ch,int count){
         else{
             i++;
         }
+    }
+}
+
+int isdigit_t(const int ch){
+    if(ch < 48 || ch > 57){
+        return -1;
+    }
+    else{
+        return ch - 48;
+    }
+}
+
+int isalpha_t(const int ch){
+    if((ch >= 65 && ch <= 90 )|| (ch >= 97 && ch <= 122)){
+        return 0;
+    }
+    else{
+        return -1;
+    }
+}
+
+char i2c(const int ch){
+    if((ch >= 65 && ch <= 90 )|| (ch >= 97 && ch <= 122)){
+        return ch;
+    }
+    else{
+        return -1;
     }
 }

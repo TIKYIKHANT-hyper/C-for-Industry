@@ -25,4 +25,7 @@ void rstrip_t(const char *origin, char *target,const int count);
 void strip_t(const char *origin, char *target,const int count);
 int strncmp_t(char *first,char *second,int firstlen,int secondlen,int startindex);//returns 0 on success , 1 on failure
 INDEXES findAllstr_t(char *target,char *str);//returns status 1 on success
-int strchrr_k(const char *str,const char ch,int count);
+int strchrr_t(const char *str,const char ch,int count);
+int isdigit_t(const int ch);//returns original value on success, -1 on failure
+int isalpha_t(const int ch);//returns 0 on success, -1 on failure
+char i2c(const int ch);//returns character on success, -1 on failure
