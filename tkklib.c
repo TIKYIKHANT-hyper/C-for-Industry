@@ -312,3 +312,10 @@ char i2c(const int ch){
         return -1;
     }
 }
+
+int intarrlen(const int *arrptr){
+    int i;
+    for(i = 0; *arrptr != '\0'; i++,arrptr++){
+    }
+    return i;
+}
