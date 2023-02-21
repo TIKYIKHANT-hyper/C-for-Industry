@@ -10,34 +10,19 @@ struct studentdata{
     char name[MAX];
     int age;
 };
-int spreadertoempty(FILE *fileptr,struct studentdata informer,int count);
+
 int binarytotext(FILE *fin,char *fout,struct studentdata stdinfo);
+int dummydatafiller(FILE *fptr, char *name, int age, struct studentdata stdinfo , int count);
+int printrecord(FILE *fptr, int index, struct studentdata stdinfo);
 int main(){
     FILE *fptr = NULL;
     fopen_s(&fptr,"D:\\CodeWithCLion\\outest.dat","wb+");
     struct studentdata datatest = {0,"",0};
-    spreadertoempty(fptr,datatest,5);
+    dummydatafiller(fptr,"Hello",12,datatest,5);
     binarytotext(fptr,"D:\\CodeWithCLion\\outest.txt",datatest);
+    printrecord(fptr,3,datatest);
     fclose(fptr);
     return 0;
-}
-
-int spreadertoempty(FILE *fileptr,struct studentdata infomer,int count){
-    if(fileptr == NULL){
-        printf("No file or such directory \n");
-        return -1;
-    }
-    rewind(fileptr);
-    int record = 1;
-    while(record <= count){
-        infomer.id = record;
-        strcpy_t("Kyaw Kyaw",infomer.name);
-        infomer.age = record * 5;
-        fseek(fileptr,(record-1)*sizeof(struct studentdata),SEEK_SET);
-        fwrite(&infomer,sizeof(struct studentdata),1,fileptr);
-        record++;
-    }
-    return 0;//success
 }
 
 int binarytotext(FILE *fin,char *fout,struct studentdata stdinfo){
@@ -68,5 +53,42 @@ int binarytotext(FILE *fin,char *fout,struct studentdata stdinfo){
     record++;
     }
     fclose(fileout);
+    return 0;
+}
+
+int dummydatafiller(FILE *fptr, char *name, int age, struct studentdata stdinfo , int count){
+    if(fptr == NULL){
+      printf("No such input file or directory");
+      return -1;
+    }
+    rewind(fptr);
+    int record = 1;
+    while(record <= count){
+        strcpy_t(name,stdinfo.name);
+        stdinfo.id = record;
+        stdinfo.age = age;
+        fseek(fptr,(record - 1) * sizeof(struct studentdata),SEEK_SET);
+        fwrite(&stdinfo,sizeof(struct studentdata),1,fptr);
+        record++;
+    }
+    return 0;
+}
+
+int printrecord(FILE *fptr, int index, struct studentdata stdinfo){
+    if(fptr == NULL){
+        printf("No such input file or directory");
+        return -1;
+    }
+    rewind(fptr);
+    int record = 1;
+    while(record <= index){
+        strcpy_t("",stdinfo.name);
+        stdinfo.id = 0;
+        stdinfo.age = 0;
+        fseek(fptr,(record - 1)*sizeof(struct studentdata),SEEK_SET);
+        fread(&stdinfo,sizeof(struct studentdata),1,fptr);
+        printf("ID = %-2d name = %-20s age = %-2d\n",stdinfo.id,stdinfo.name,stdinfo.age);
+        record++;
+    }
     return 0;
 }
