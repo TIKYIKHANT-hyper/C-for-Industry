@@ -31,6 +31,20 @@ void insert(nodeptr * startptr, char value){
             previousptr = currentptr;
             currentptr = currentptr->nextptr;
         }
+        if(previousptr == NULL){
+            newptr->nextptr = *startptr;
+            *startptr = newptr;
+        }
+        else{
+            previousptr->nextptr = newptr;
+            newptr->nextptr = currentptr;
+        }
     }
+    else{
+     printf("None are inserted");
+    }
+}
 
+int isEmpty(nodeptr sptr){
+    return sptr == NULL;
 }
