@@ -24,6 +24,13 @@ void insert(nodeptr * startptr, char value){
     if(newptr != NULL){
         newptr->id = value;
         newptr->nextptr = NULL;
+
+        nodeptr previousptr = NULL;
+        nodeptr currentptr = *startptr;
+        while(currentptr != NULL && value > currentptr->id){
+            previousptr = currentptr;
+            currentptr = currentptr->nextptr;
+        }
     }
 
 }
