@@ -1,50 +1,39 @@
 #include <stdio.h>
 #include "tkklib.h"
 #include <stdlib.h>
-struct datanode{
-    int id;
-    char keygen[20];
-    struct datanode * nextptr;
+struct node{
+    int data;
+    struct node *next;
 };
-typedef struct datanode DataNode;
-typedef DataNode * nodeptr;
-int main(){
-    
+
+struct node *createnewnode(int data){
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->data = data;
+    newnode->next = NULL;
+    return newnode;
+}
+
+void insertnode(struct node **nodeheader,int data){
+    struct node *newnode = createnewnode(data);
+    newnode->next = *nodeheader;
+    *nodeheader = newnode;
+}
+
+void printlist(struct node *header){
+    while(header != NULL){
+        printf("%d\n",header->data);
+        header = header->next;
+    }
+    printf("\n");
+}
+
+int main(int argc,char *argv[]){
+    struct node* Node = NULL;
+    insertnode(&Node,1);
+    insertnode(&Node,2);
+    insertnode(&Node,3);
+    insertnode(&Node,4);
+    printf("Linked Lists:\n");
+    printlist(Node);
     return 0;
-}
-
-void instructions(){
-    system("cls");
-    printf("1-insert data\n");
-    printf("0-exit\n");
-}
-
-void insert(nodeptr * startptr, char value){
-    nodeptr newptr = malloc(sizeof(DataNode));
-    if(newptr != NULL){
-        newptr->id = value;
-        newptr->nextptr = NULL;
-
-        nodeptr previousptr = NULL;
-        nodeptr currentptr = *startptr;
-        while(currentptr != NULL && value > currentptr->id){
-            previousptr = currentptr;
-            currentptr = currentptr->nextptr;
-        }
-        if(previousptr == NULL){
-            newptr->nextptr = *startptr;
-            *startptr = newptr;
-        }
-        else{
-            previousptr->nextptr = newptr;
-            newptr->nextptr = currentptr;
-        }
-    }
-    else{
-     printf("None are inserted");
-    }
-}
-
-int isEmpty(nodeptr sptr){
-    return sptr == NULL;
 }
