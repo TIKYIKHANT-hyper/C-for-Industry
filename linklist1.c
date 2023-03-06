@@ -7,7 +7,7 @@ struct node{
     char specialkey[MAX];
     struct node *next;
 };
-
+typedef struct node *nodeptr;
 struct node *createnewnode(int data,char *key){
     struct node *newnode = (struct node*)malloc(sizeof(struct node));
     newnode->data = data;
@@ -53,12 +53,40 @@ void appendnode(struct node **header,int data,char spkey[MAX]){
         printf("Error appending new nodes");
     }
 }
+
+int delete(nodeptr *sptr,int res){
+    if(res == ((*sptr)->data)){
+        nodeptr temp = *sptr;
+        *sptr = (*sptr)->next;//dethreading
+        free(temp);
+        return res;
+    }
+    else{
+        nodeptr previousptr = *sptr;
+        nodeptr currentptr = (*sptr)->next;
+
+        while(currentptr != NULL && currentptr->data != res){
+            previousptr = currentptr;
+            currentptr = currentptr->next;
+        }
+        if(currentptr != NULL){
+            nodeptr temptr = currentptr;
+            previousptr->next = currentptr->next;
+            free(temptr);
+            return res;
+        }
+        return -1;//data for deleting not found
+    }
+}
 int main(int argc,char *argv[]){
     struct node* Node = NULL;
     appendnode(&Node,1,"Ok");
     appendnode(&Node,2,"Go");
     insertnode(&Node,3,"Shuttle");
     printf("Linked Lists:\n");
+    printlist(Node);
+    printf("after deleting\n");
+    delete(&Node,2);
     printlist(Node);
     return 0;
 }//
