@@ -49,8 +49,14 @@ cmake_ninja_workdir = D$:/CodeWithCLion/cmake-build-debug/
 
 build cmake_object_order_depends_target_CodeWithCLion: phony || CMakeFiles/CodeWithCLion.dir
 
-build CMakeFiles/CodeWithCLion.dir/linklist1.c.obj: C_COMPILER__CodeWithCLion_Debug D$:/CodeWithCLion/linklist1.c || cmake_object_order_depends_target_CodeWithCLion
-  DEP_FILE = CMakeFiles\CodeWithCLion.dir\linklist1.c.obj.d
+build CMakeFiles/CodeWithCLion.dir/linklists2.c.obj: C_COMPILER__CodeWithCLion_Debug D$:/CodeWithCLion/linklists2.c || cmake_object_order_depends_target_CodeWithCLion
+  DEP_FILE = CMakeFiles\CodeWithCLion.dir\linklists2.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\CodeWithCLion.dir
+  OBJECT_FILE_DIR = CMakeFiles\CodeWithCLion.dir
+
+build CMakeFiles/CodeWithCLion.dir/linklistlib.c.obj: C_COMPILER__CodeWithCLion_Debug D$:/CodeWithCLion/linklistlib.c || cmake_object_order_depends_target_CodeWithCLion
+  DEP_FILE = CMakeFiles\CodeWithCLion.dir\linklistlib.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu99
   OBJECT_DIR = CMakeFiles\CodeWithCLion.dir
   OBJECT_FILE_DIR = CMakeFiles\CodeWithCLion.dir
@@ -63,7 +69,7 @@ build CMakeFiles/CodeWithCLion.dir/linklist1.c.obj: C_COMPILER__CodeWithCLion_De
 #############################################
 # Link the executable CodeWithCLion.exe
 
-build CodeWithCLion.exe: C_EXECUTABLE_LINKER__CodeWithCLion_Debug CMakeFiles/CodeWithCLion.dir/linklist1.c.obj
+build CodeWithCLion.exe: C_EXECUTABLE_LINKER__CodeWithCLion_Debug CMakeFiles/CodeWithCLion.dir/linklists2.c.obj CMakeFiles/CodeWithCLion.dir/linklistlib.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CodeWithCLion.dir
