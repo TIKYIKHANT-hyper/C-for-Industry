@@ -82,4 +82,22 @@ int delete(nodeptr *sptr,int res){
     }
 }
 
-void insert()
+void insert(nodeptr *sptr, int data, char keytoken[MAX]){
+    nodeptr newptr = createnewnode(data,keytoken);
+    if(newptr != NULL){
+        nodeptr previousptr = NULL;//start pointer
+        nodeptr currentptr = sptr;
+
+        while(currentptr != NULL && currentptr->next != NULL){
+            previousptr = currentptr;
+            currentptr = currentptr->next;
+        }
+        if(previousptr == NULL){
+            newptr->next = *sptr;
+            *sptr = newptr;
+        } else{
+            previousptr->next = newptr;
+            newptr->next = currentptr;
+        }
+    }
+}

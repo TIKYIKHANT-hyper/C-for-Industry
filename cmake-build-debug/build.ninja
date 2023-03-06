@@ -55,12 +55,6 @@ build CMakeFiles/CodeWithCLion.dir/linklists2.c.obj: C_COMPILER__CodeWithCLion_D
   OBJECT_DIR = CMakeFiles\CodeWithCLion.dir
   OBJECT_FILE_DIR = CMakeFiles\CodeWithCLion.dir
 
-build CMakeFiles/CodeWithCLion.dir/linklistlib.c.obj: C_COMPILER__CodeWithCLion_Debug D$:/CodeWithCLion/linklistlib.c || cmake_object_order_depends_target_CodeWithCLion
-  DEP_FILE = CMakeFiles\CodeWithCLion.dir\linklistlib.c.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu99
-  OBJECT_DIR = CMakeFiles\CodeWithCLion.dir
-  OBJECT_FILE_DIR = CMakeFiles\CodeWithCLion.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CodeWithCLion
@@ -69,7 +63,7 @@ build CMakeFiles/CodeWithCLion.dir/linklistlib.c.obj: C_COMPILER__CodeWithCLion_
 #############################################
 # Link the executable CodeWithCLion.exe
 
-build CodeWithCLion.exe: C_EXECUTABLE_LINKER__CodeWithCLion_Debug CMakeFiles/CodeWithCLion.dir/linklists2.c.obj CMakeFiles/CodeWithCLion.dir/linklistlib.c.obj
+build CodeWithCLion.exe: C_EXECUTABLE_LINKER__CodeWithCLion_Debug CMakeFiles/CodeWithCLion.dir/linklists2.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CodeWithCLion.dir
