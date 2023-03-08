@@ -166,3 +166,37 @@ int delete_end(nodeptr *target){
         return 1;
     }
 }
+
+int delete_fun(nodeptr *target,const int id, const char *key){
+    if(*target == NULL){
+        printf("Error on deleting empty structure\n");
+        return -1;
+    }
+    else{
+        nodeptr previousptr = *target;
+        nodeptr currentptr = (*target)->next;
+        if(previousptr->data == id && strcmp_t(previousptr->specialkey,key)== 1){
+            *target = currentptr;
+            previousptr->next = NULL;
+            free(previousptr);
+            return 1;//found at first sight and deleted
+        }
+        while(currentptr != NULL){
+            if(currentptr->data == id)
+            {
+                if(strcmp_t(currentptr->specialkey,key)==1) {
+                    previousptr->next = currentptr->next;
+                    currentptr->next = NULL;
+                    free(currentptr);
+                    return 1;//success deleting
+                }
+            }
+            else{
+                previousptr = currentptr;
+                currentptr = currentptr->next;
+            }
+        }
+    }
+    printf("error deleting\n");
+    return -1;
+}

@@ -14,4 +14,5 @@ struct node *createnewnode(int data,char *key);
 nodeptr find(nodeptr start, const char *key);
 int deletefirst(nodeptr *target);
 int delete_end(nodeptr *target);
+int delete_fun(nodeptr *target,const int id, const char *key);
 #endif //CODEWITHCLION_LINKLISTLIB_H

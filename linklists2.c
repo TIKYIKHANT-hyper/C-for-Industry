@@ -14,7 +14,7 @@ int main(){
     insertnode(&start,1,"Demo");
     insert(&start,2,"Piko");
     printlist(start);
-    delete_end(&start);
+    delete_fun(&start,2,"Piko");
     printlist(start);
     return 0;
 }
