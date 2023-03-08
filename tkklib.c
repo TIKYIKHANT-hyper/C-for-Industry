@@ -19,20 +19,20 @@ int strlen_t(const char *s){
 int strcmp_t(const char *s1, const char *s2){
     if(strlen_t(s1) < strlen_t(s2)){
         //printf("first string is shorter than second string\n");
-        return 1;
+        return -1;
     }
     else if(strlen_t(s1) > strlen_t(s2)){
         //printf("first string is longer than second string\n");
-        return 1;
+        return -1;
     }
     else{
         for(;*s1 == *s2; s1++,s2++){
             if(*s1 == '\0' && *s2 == '\0'){
-                return 0;
+                return 1;
             }
         }
     }
-    return 1;
+    return -1;
 }
 /*
 void strcon_t(const char *s1, const char *s2, char *target){
@@ -240,14 +240,14 @@ void strip_t(const char *origin, char *target,const int count){
 
 int strncmp_t(char *first,char *second,int firstlen,int secondlen,int startindex){
     if(secondlen > firstlen){
-        return 1;
+        return -1;
     }
     for(int i = 0; i < secondlen; i++){
         if(first[startindex+i] != second[i]){
-            return 1;
+            return -1;
         }
     }
-    return 0;
+    return 1;
 }
 
 INDEXES findAllstr_t(char *target,char *str){

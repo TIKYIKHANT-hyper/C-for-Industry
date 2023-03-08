@@ -119,7 +119,7 @@ nodeptr find(nodeptr start, const char *key){
         return NULL;
     }
     while(start != NULL){
-        if(strcmp_t(start->specialkey,key)){
+        if(strcmp_t(start->specialkey,key)==1){
             return start;
         }
         else{
