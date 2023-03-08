@@ -12,4 +12,5 @@ int length(nodeptr start);
 void appendnode(struct node **header,int data,char spkey[MAX]);
 struct node *createnewnode(int data,char *key);
 nodeptr find(nodeptr start, const char *key);
+int deletefirst(nodeptr *target);
 #endif //CODEWITHCLION_LINKLISTLIB_H

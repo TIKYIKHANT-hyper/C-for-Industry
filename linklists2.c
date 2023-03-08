@@ -14,7 +14,7 @@ int main(){
     insertnode(&start,1,"Demo");
     insert(&start,2,"Piko");
     printlist(start);
-    nodeptr res = find(start,"Piko");
-    printf("%x",res);
+    printf("status code = %d\n",deletefirst(&start));
+    printlist(start);
     return 0;
 }

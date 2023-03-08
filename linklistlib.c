@@ -128,3 +128,23 @@ nodeptr find(nodeptr start, const char *key){
     }
     return NULL;
 }
+
+int deletefirst(nodeptr *target){
+    if(*target == NULL){
+        printf("Error cannot delete empty structure");
+        return -1;
+    }
+    else{
+        nodeptr currentptr = *target;
+        if((*target)->next == NULL){
+            *target = NULL;
+            free(currentptr);
+            return 1;
+        }
+        else{
+            *target = currentptr->next;
+            free(currentptr);
+            return 1;
+        }
+    }
+}
