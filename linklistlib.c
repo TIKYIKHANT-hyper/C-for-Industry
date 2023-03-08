@@ -148,3 +148,21 @@ int deletefirst(nodeptr *target){
         }
     }
 }
+
+int delete_end(nodeptr *target){
+    if(*target == NULL){
+        printf("Error on deleting empty structure\n");
+        return -1;
+    }
+    else{
+        nodeptr currentptr = (*target)->next;
+        nodeptr previousptr = *target;
+        while(currentptr->next != NULL){
+            previousptr = currentptr;
+            currentptr = currentptr->next;
+        }
+        previousptr->next = NULL;
+        free(currentptr);
+        return 1;
+    }
+}
