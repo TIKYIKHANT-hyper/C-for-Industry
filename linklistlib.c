@@ -101,3 +101,15 @@ void insert(nodeptr *sptr, int data, char keytoken[MAX]){
         }
     }
 }
+
+int length(nodeptr start){
+    int count = 0;
+    if(start == NULL){
+        return 0;
+    }
+    while(start != NULL){
+        count++;
+        start = start->next;
+    }
+    return count;
+}

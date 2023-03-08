@@ -14,5 +14,7 @@ int main(){
     insertnode(&start,1,"Demo");
     insert(&start,2,"Piko");
     printlist(start);
+    int  len = length(start);
+    printf("%d",len);
     return 0;
 }
