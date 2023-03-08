@@ -113,3 +113,18 @@ int length(nodeptr start){
     }
     return count;
 }
+
+nodeptr find(nodeptr start, const char *key){
+    if(start == NULL){
+        return NULL;
+    }
+    while(start != NULL){
+        if(strcmp_t(start->specialkey,key)){
+            return start;
+        }
+        else{
+            start = start->next;
+        }
+    }
+    return NULL;
+}

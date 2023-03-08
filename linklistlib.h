@@ -7,4 +7,9 @@
 #include "linklistlib.c"
 void insert(nodeptr *sptr, int data, char keytoken[MAX]);
 void printlist(struct node *header);
+int delete(nodeptr *sptr,int res);
+int length(nodeptr start);
+void appendnode(struct node **header,int data,char spkey[MAX]);
+struct node *createnewnode(int data,char *key);
+nodeptr find(nodeptr start, const char *key);
 #endif //CODEWITHCLION_LINKLISTLIB_H
