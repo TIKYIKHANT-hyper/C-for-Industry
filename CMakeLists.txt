@@ -3,4 +3,4 @@ project(CodeWithCLion C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(CodeWithCLion stackdata.c)
+add_executable(CodeWithCLion queue.c)
