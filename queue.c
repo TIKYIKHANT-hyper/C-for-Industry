@@ -4,28 +4,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct queuedata{
-    int id;
+    int key;
 }queueDATA;
 
 typedef struct queueNode{
-    queueDATA idData;
+    int id;
+    queueDATA data;
     struct queueNode *next_node;
 }queueNODE;
+
 typedef queueNODE * queuePtr;
 int isEmpty(queuePtr head);
 void printQueue(queuePtr head);
 int enqueue(queuePtr * head, queuePtr * tail, int data);
+int deque(queuePtr *head, queuePtr *tail);
 int main(){
     queuePtr head = NULL;
     queuePtr tail = NULL;
-    enqueue(head,tail,1);
-    enqueue(head,tail,2);
+    enqueue(&head,&tail,1);
+    enqueue(&head,&tail,2);
+    enqueue(&head,&tail,3);
+    enqueue(&head,&tail,4);
+    printQueue(head);
+    deque(&head,&tail);
+    printQueue(head);
 }
 
-int enqueue(queuePtr * head, queuePtr * tail, int data){
-    queuePtr newnode = (queuePtr) malloc(sizeof(queueNODE));
+int enqueue(queuePtr *head, queuePtr * tail, int data){
+    queuePtr newnode = (queuePtr)malloc(sizeof(queueNODE));
     if(newnode != NULL){
-        newnode->idData;
+        newnode->id = data;
+        newnode->data.key = data * 10;
         newnode->next_node = NULL;
         if(isEmpty(*head)){
             *head = newnode;
@@ -52,7 +61,20 @@ void printQueue(queuePtr head){
         printf("Queue is empty\n");
     }
     while(current != NULL){
-        printf("{%d}->",current->idData);
+        printf("{%d}.%d->",current->id,current->data.key);
         current = current->next_node;
     }
+    printf("NULL\n");
+}
+
+int deque(queuePtr *head, queuePtr *tail){
+    int value = (*head)->id;
+    int subdata = (*head)->data.key;
+    queuePtr temptr = *head;
+    *head = (*head)->next_node;
+    if(*head == NULL){
+        *tail = NULL;
+    }
+    free(temptr);
+    return value,subdata;
 }
