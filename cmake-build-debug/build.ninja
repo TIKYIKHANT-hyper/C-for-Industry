@@ -55,6 +55,12 @@ build CMakeFiles/CodeWithCLion.dir/queue.c.obj: C_COMPILER__CodeWithCLion_Debug 
   OBJECT_DIR = CMakeFiles\CodeWithCLion.dir
   OBJECT_FILE_DIR = CMakeFiles\CodeWithCLion.dir
 
+build CMakeFiles/CodeWithCLion.dir/binarytree.c.obj: C_COMPILER__CodeWithCLion_Debug D$:/CodeWithCLion/binarytree.c || cmake_object_order_depends_target_CodeWithCLion
+  DEP_FILE = CMakeFiles\CodeWithCLion.dir\binarytree.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\CodeWithCLion.dir
+  OBJECT_FILE_DIR = CMakeFiles\CodeWithCLion.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CodeWithCLion
@@ -63,7 +69,7 @@ build CMakeFiles/CodeWithCLion.dir/queue.c.obj: C_COMPILER__CodeWithCLion_Debug 
 #############################################
 # Link the executable CodeWithCLion.exe
 
-build CodeWithCLion.exe: C_EXECUTABLE_LINKER__CodeWithCLion_Debug CMakeFiles/CodeWithCLion.dir/queue.c.obj
+build CodeWithCLion.exe: C_EXECUTABLE_LINKER__CodeWithCLion_Debug CMakeFiles/CodeWithCLion.dir/queue.c.obj CMakeFiles/CodeWithCLion.dir/binarytree.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CodeWithCLion.dir
