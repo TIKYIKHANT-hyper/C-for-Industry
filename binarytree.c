@@ -14,6 +14,8 @@ typedef struct treenode treeNode;
 typedef treeNode * treeptr;
 int insertNode(treeptr * base, int value);
 void inOrder(treeptr baseptr);
+void preOrder(treeptr baseptr);
+void postOrder(treeptr baseptr);
 int main() {
     treeptr root = NULL;
     srand(time(NULL));
@@ -24,7 +26,7 @@ int main() {
         printf(" %d ",item);
     }
     printf("InOrder going:\n");
-    inOrder(root);
+    preOrder(root);
     return 0;
 }
 
@@ -57,5 +59,21 @@ void inOrder(treeptr baseptr){
         inOrder(baseptr->leftptr);
         printf(" %d " ,baseptr->data);
         inOrder(baseptr->rightptr);
+    }
+}
+
+void preOrder(treeptr baseptr){
+    if(baseptr != NULL){
+        printf(" %d ",baseptr->data);
+        preOrder(baseptr->leftptr);
+        preOrder(baseptr->rightptr);
+    }
+}
+
+void postOrder(treeptr baseptr){
+    if(baseptr != NULL){
+        postOrder(baseptr->leftptr);
+        postOrder(baseptr->rightptr);
+        printf(" %d ",baseptr->data);
     }
 }
