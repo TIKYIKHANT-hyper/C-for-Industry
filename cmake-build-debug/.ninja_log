@@ -1,15 +1,13 @@
 # ninja log v5
 3	107	6996997187472572	CMakeFiles/CodeWithCLion.dir/main.c.obj	b99b3065713d8e35
-81	189	7005076737830626	CodeWithCLion.exe	3aa1be563521511a
+176	299	7007445694820796	CodeWithCLion.exe	ad6f88ff1ff5c5f0
 6	116	6969699744451222	CMakeFiles/CodeWithCLion.dir/functionptrarray.c.obj	9bf3e201c82f9e33
 2	116	6998009410386269	CMakeFiles/CodeWithCLion.dir/linklist1.c.obj	8b3a2ba893fa6238
 2	220	6981872882076803	CMakeFiles/CodeWithCLion.dir/databasetr.c.obj	d3e9eec97827ffba
 3	111	6987027735259312	CMakeFiles/CodeWithCLion.dir/databaset.c.obj	b60cc7a3d709f5df
-1	160	7007445691245524	build.ninja	1e40e3ea7db4e3bb
+0	168	7007555405422410	build.ninja	1e40e3ea7db4e3bb
 2	113	6999983990879339	CMakeFiles/CodeWithCLion.dir/linklists2.c.obj	a72b9686490ce640
 1	82	6999836161602976	CMakeFiles/CodeWithCLion.dir/datastructuresch12.4.c.obj	f5e4a4a99a1708bb
 2	78	7004790770074644	CMakeFiles/CodeWithCLion.dir/stackdata.c.obj	4c366df1a5022ec6
 1	80	7005076736770585	CMakeFiles/CodeWithCLion.dir/queue.c.obj	59ae2591ba657bbe
-0	168	7007445691245524	build.ninja	1e40e3ea7db4e3bb
 0	175	7007445693615672	CMakeFiles/CodeWithCLion.dir/binarytree.c.obj	e7fbd4fecd2582bd
-176	299	7007445694820796	CodeWithCLion.exe	ad6f88ff1ff5c5f0
