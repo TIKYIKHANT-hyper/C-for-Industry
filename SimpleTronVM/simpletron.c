@@ -65,6 +65,9 @@ enum
     FL_NEG = 1 << 2,//N
 };
 
+unsigned short sign_extend(unsigned short x, int bit_count);
+void update_flags(unsigned short r);
+
 int main(int argc,const char *argv[]){
     reg[R_COND] = FL_ZRO;
     enum {PC_START = 0x3000 };
@@ -86,7 +89,23 @@ int main(int argc,const char *argv[]){
         unsigned short op = instr >> 12;
 
         switch (op) {
-            case OP_ADD:
+            case OP_ADD: {
+                /*destination register (DR)*/
+                unsigned short r0 = (instr >> 9) & 0x7;
+                /*first operand SR1*/
+                unsigned short r1 = (instr >> 6) & 0x7;
+                /*whether in immediate mode*/
+                unsigned short imm_flag = (instr >> 5) & 0x1;
+                if(imm_flag){
+                    unsigned short imm5 = sign_extend(instr & 0x1F, 5);
+                    reg[r0] = reg[r1] + imm5;
+                }
+                else {
+                    unsigned short r2 = instr & 0x7;
+                    reg[r0] = reg[r1] + reg[r2];
+                }
+                update_flags(r0);
+            }
                 break;
             case OP_AND:
                 break;
@@ -101,6 +120,12 @@ int main(int argc,const char *argv[]){
             case OP_LD:
                 break;
             case OP_LDI:
+            {
+                unsigned short r0 = (instr >> 9) & 0x7;
+                unsigned short pc_offset = sign_extend(instr & 0x1FF,9);
+                reg[r0] = mem_read(mem_read(reg[R_PC] + pc_offset));
+                update_flags(r0);
+            }
                 break;
             case OP_LDR:
                 break;
@@ -121,4 +146,23 @@ int main(int argc,const char *argv[]){
         }
     }
     //shutdown
+}
+
+unsigned short sign_extend(unsigned short x, int bit_count){
+    if((x >> (bit_count - 1))&1){
+        x |= (0xFFFF << bit_count);
+    }
+    return x;
+}
+
+void update_flags(unsigned short r){
+    if(reg[r] == 0){
+        reg[R_COND] = FL_ZRO;
+    }
+    else if(reg[r] > 15){
+        reg[R_COND] = FL_NEG;
+    }
+    else{
+        reg[R_COND] = FL_POS;
+    }
 }
