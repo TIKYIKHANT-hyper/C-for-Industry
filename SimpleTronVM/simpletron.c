@@ -45,7 +45,7 @@ enum
     OP_JSR,//JUMP REGISTER
     OP_AND,//BITWISE AND
     OP_LDR,//LOAD REGISTER
-    OP_SDR,//STORE REGISTER
+    OP_STR,//STORE REGISTER
     OP_RTI,//UNUSED
     OP_NOT,//BITWISE NOT
     OP_LDI,//LOAD INDIRECT
@@ -65,3 +65,60 @@ enum
     FL_NEG = 1 << 2,//N
 };
 
+int main(int argc,const char *argv[]){
+    reg[R_COND] = FL_ZRO;
+    enum {PC_START = 0x3000 };
+    reg[R_PC] = PC_START;
+    int running = 1;
+    while(running){
+        /*Fetch*/
+        if(argc < 2){//show usage string
+            printf("lc3 [image-file1] ...\n");
+            exit(2);
+        }
+        for(int j = 1; j < argc; ++j){
+            if(!read_image(argv[j])){
+                printf("fail to load image %s \n",argv[j]);
+                exit(1);
+            }
+        }
+        unsigned short instr = mem_read(reg[R_PC]++);
+        unsigned short op = instr >> 12;
+
+        switch (op) {
+            case OP_ADD:
+                break;
+            case OP_AND:
+                break;
+            case OP_NOT:
+                break;
+            case OP_BR:
+                break;
+            case OP_JMP:
+                break;
+            case OP_JSR:
+                break;
+            case OP_LD:
+                break;
+            case OP_LDI:
+                break;
+            case OP_LDR:
+                break;
+            case OP_LEA:
+                break;
+            case OP_ST:
+                break;
+            case OP_STI:
+                break;
+            case OP_STR:
+                break;
+            case OP_TRAP:
+                break;
+            case OP_RES:
+            case OP_RTI:
+            default:
+                break;
+        }
+    }
+    //shutdown
+}
