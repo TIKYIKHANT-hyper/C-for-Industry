@@ -108,8 +108,28 @@ int main(int argc,const char *argv[]){
             }
                 break;
             case OP_AND:
+            {
+                unsigned short r0 = (instr >> 9) & 0x7;
+                unsigned short r1 = (instr >> 6) & 0x7;
+                unsigned short imm_flag = (instr >> 5) & 0x1;
+                if(imm_flag){
+                    unsigned short imm5 = sign_extend(instr & 0x1F,5);
+                    reg[r0] = reg[r1] + imm5;
+                }
+                else{
+                    unsigned short r2 = instr & 0x7;
+                    reg[r0] = reg[r1] + reg[r2];
+                }
+                update_flags(r0);
+            }
                 break;
             case OP_NOT:
+            {
+                unsigned short r0 = (instr >> 9) & 0x7;
+                unsigned short r1 = (instr >> 6) & 0x7;
+                reg[r0] = ~reg[r1];
+                update_flags(r0);
+            }
                 break;
             case OP_BR:
                 break;
@@ -141,7 +161,9 @@ int main(int argc,const char *argv[]){
                 break;
             case OP_RES:
             case OP_RTI:
-            default:
+            default:{
+                abort();//bad operation code
+            }
                 break;
         }
     }
