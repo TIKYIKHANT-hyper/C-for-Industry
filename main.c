@@ -1,39 +1,24 @@
 #include <stdio.h>
 #include "tkklib.h"
 #include <stdlib.h>
-struct node{
-    int data;
-    struct node *next;
+struct mydata{
+    int idone;
+    int idtwo;
+    struct {
+        int innerone;
+        int innertwo;
+    };
 };
 
-struct node *createnewnode(int data){
-    struct node *newnode = (struct node*)malloc(sizeof(struct node));
-    newnode->data = data;
-    newnode->next = NULL;
-    return newnode;
-}
-
-void insertnode(struct node **nodeheader,int data){
-    struct node *newnode = createnewnode(data);
-    newnode->next = *nodeheader;
-    *nodeheader = newnode;
-}
-
-void printlist(struct node *header){
-    while(header != NULL){
-        printf("%d\n",header->data);
-        header = header->next;
-    }
-    printf("\n");
-}
-
 int main(int argc,char *argv[]){
-    struct node* Node = NULL;
-    insertnode(&Node,1);
-    insertnode(&Node,2);
-    insertnode(&Node,3);
-    insertnode(&Node,4);
-    printf("Linked Lists:\n");
-    printlist(Node);
+    struct mydata ourdata;
+    ourdata.idone = 1;
+    ourdata.idtwo = 2;
+    ourdata.innerone = 3;
+    ourdata.innertwo = 4;
+    printf("%d",ourdata.idone);
+    printf("%d",ourdata.idtwo);
+    printf("%d",ourdata.innerone);
+    printf("%d",ourdata.innertwo);
     return 0;
 }
