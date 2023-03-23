@@ -18,7 +18,14 @@ struct node *createnewnode(int data,char *key){
     strcpy_t(key,newnode->specialkey);
     return newnode;
 }
-
+int size(nodeptr head){
+    int i = 0;
+    while(head != NULL){
+        i++;
+        head = head->next;
+    }
+    return i;
+}
 void insertnode(struct node **nodeheader,int data,char spkey[MAX]){
     struct node *newnode = createnewnode(data,spkey);
     newnode->next = *nodeheader;
@@ -56,7 +63,18 @@ void appendnode(struct node **header,int data,char spkey[MAX]){
         printf("Error appending new nodes");
     }
 }
-
+nodeptr nodeatIndex(nodeptr head,int index){
+    int count = 0;
+    if(index >= size(head)){
+        printf("Index out of Array\n");
+        return NULL;
+    }
+    while(head != NULL && count < index){
+        count++;
+        head = head->next;
+    }
+    return head;
+}
 int delete(nodeptr *sptr,int res){
     if(res == ((*sptr)->data)){
         nodeptr temp = *sptr;
@@ -199,4 +217,45 @@ int delete_fun(nodeptr *target,const int id, const char *key){
     }
     printf("error deleting\n");
     return -1;
+}
+nodeptr merge(nodeptr a,nodeptr b) {
+    nodeptr left = a;
+    nodeptr right = b;
+    nodeptr current = createnewnode(0,"empty");
+    while(left || right){
+    if (left == NULL) {
+        appendnode(&current,right->data,right->specialkey);
+        right = right->next;
+    } else if (right == NULL) {
+        appendnode(&current,left->data,left->specialkey);
+        left = left->next;
+    }
+    else{
+        if(left->data < right->data){
+            appendnode(&current,left->data,left->specialkey);
+            left = left->next;
+        }
+        else{
+            appendnode(&current,right->data,right->specialkey);
+            right = right->next;
+        }
+    }
+}
+    nodeptr temphead = current;//for deleting
+    current  = current->next;
+    free(temphead);
+    return current;
+}
+nodeptr mergeSort(nodeptr start){
+    if(start->next == NULL || (start) == NULL){
+        return start;
+    }
+    int middleindex = size(start) / 2;
+    nodeptr midnode = nodeatIndex(start,middleindex - 1);
+    nodeptr leftnode = start;
+    nodeptr rightnode = midnode->next;
+    midnode->next = NULL;
+    nodeptr righthand = mergeSort(rightnode);
+    nodeptr lefthand = mergeSort(leftnode);
+    return merge(lefthand,righthand);
 }

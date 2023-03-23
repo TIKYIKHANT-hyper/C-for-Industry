@@ -5,6 +5,7 @@
 #ifndef CODEWITHCLION_LINKLISTLIB_H
 #define CODEWITHCLION_LINKLISTLIB_H
 #include "linklistlib.c"
+void insertnode(struct node **nodeheader,int data,char spkey[MAX]);//initial node
 void insert(nodeptr *sptr, int data, char keytoken[MAX]);
 void printlist(struct node *header);
 int delete(nodeptr *sptr,int res);
@@ -15,4 +16,6 @@ nodeptr find(nodeptr start, const char *key);
 int deletefirst(nodeptr *target);
 int delete_end(nodeptr *target);
 int delete_fun(nodeptr *target,const int id, const char *key);
+int size(nodeptr head);
+nodeptr mergeSort(nodeptr start);
 #endif //CODEWITHCLION_LINKLISTLIB_H

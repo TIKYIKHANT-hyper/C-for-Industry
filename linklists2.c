@@ -13,8 +13,10 @@ int main(){
     nodeptr *start = NULL;
     insertnode(&start,1,"Demo");
     insert(&start,2,"Piko");
+    insert(&start,3,"Nano");
+    insert(&start,4,"Micro");
     printlist(start);
-    delete_fun(&start,2,"Piko");
-    printlist(start);
+    nodeptr newnode = mergeSort(start);
+    printlist(newnode);
     return 0;
 }
