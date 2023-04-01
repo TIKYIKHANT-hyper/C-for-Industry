@@ -193,9 +193,18 @@ int main(int argc,const char *argv[]){
                 update_flags(r0);
             }
                 break;
-            case OP_ST:
+            case OP_ST: {
+                unsigned short r0 = (instr >> 9) & 0x7;
+                unsigned short pc_offset = sign_extend(instr & 0x1FF, 9);
+                mem_write(reg[R_PC] + pc_offset, reg[r0]);
+            }
                 break;
             case OP_STI:
+            {
+                unsigned short r0 = (instr >> 9) & 0x7;
+                unsigned short pc_offset = sign_extend(instr & 0x1FF, 9);
+                mem_write(mem_read(reg[R_PC] + pc_offset),reg[r0]);
+            }
                 break;
             case OP_STR:
                 break;
