@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "CodeWithCLion.exe"
-		},
-		{
-			"path" : "CodeWithCLion.pdb"
+			"path" : "CodeWithCLion"
 		}
 	],
 	"backtrace" : 1,
@@ -55,8 +52,7 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
@@ -72,16 +68,12 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
 	"name" : "CodeWithCLion",
-	"nameOnDisk" : "CodeWithCLion.exe",
+	"nameOnDisk" : "CodeWithCLion",
 	"paths" : 
 	{
 		"build" : ".",
@@ -93,8 +85,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
@@ -104,12 +95,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "main.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "SimpleTronVM/simpletron.c",
 			"sourceGroupIndex" : 0
 		}
 	],
