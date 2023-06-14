@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.9011.31/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.9011.31/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/user/C-for-Industry/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.9011.31/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.9011.31/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -129,29 +129,29 @@ CodeWithCLion/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/build
 .PHONY : CodeWithCLion/fast
 
-main.o: main.c.o
-.PHONY : main.o
+countofP_or_sumofN.o: countofP_or_sumofN.c.o
+.PHONY : countofP_or_sumofN.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/main.c.o
-.PHONY : main.c.o
+countofP_or_sumofN.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o
+.PHONY : countofP_or_sumofN.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+countofP_or_sumofN.i: countofP_or_sumofN.c.i
+.PHONY : countofP_or_sumofN.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/main.c.i
-.PHONY : main.c.i
+countofP_or_sumofN.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.i
+.PHONY : countofP_or_sumofN.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+countofP_or_sumofN.s: countofP_or_sumofN.c.s
+.PHONY : countofP_or_sumofN.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/main.c.s
-.PHONY : main.c.s
+countofP_or_sumofN.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.s
+.PHONY : countofP_or_sumofN.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CodeWithCLion"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... countofP_or_sumofN.o"
+	@echo "... countofP_or_sumofN.i"
+	@echo "... countofP_or_sumofN.s"
 .PHONY : help
 
 

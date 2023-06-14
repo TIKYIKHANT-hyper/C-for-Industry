@@ -76,7 +76,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/user/C-for-Industry/main.c">
+		<Unit filename="/home/user/C-for-Industry/countofP_or_sumofN.c">
 			<Option target="CodeWithCLion"/>
 		</Unit>
 		<Unit filename="/home/user/C-for-Industry/CMakeLists.txt">
