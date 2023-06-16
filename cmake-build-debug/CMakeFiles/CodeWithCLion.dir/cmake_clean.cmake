@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o"
-  "CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o.d"
+  "CMakeFiles/CodeWithCLion.dir/main.c.o"
+  "CMakeFiles/CodeWithCLion.dir/main.c.o.d"
   "CodeWithCLion"
   "CodeWithCLion.pdb"
 )

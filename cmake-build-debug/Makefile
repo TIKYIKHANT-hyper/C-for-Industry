@@ -129,29 +129,29 @@ CodeWithCLion/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/build
 .PHONY : CodeWithCLion/fast
 
-countofP_or_sumofN.o: countofP_or_sumofN.c.o
-.PHONY : countofP_or_sumofN.o
+main.o: main.c.o
+.PHONY : main.o
 
 # target to build an object file
-countofP_or_sumofN.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o
-.PHONY : countofP_or_sumofN.c.o
+main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/main.c.o
+.PHONY : main.c.o
 
-countofP_or_sumofN.i: countofP_or_sumofN.c.i
-.PHONY : countofP_or_sumofN.i
+main.i: main.c.i
+.PHONY : main.i
 
 # target to preprocess a source file
-countofP_or_sumofN.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.i
-.PHONY : countofP_or_sumofN.c.i
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/main.c.i
+.PHONY : main.c.i
 
-countofP_or_sumofN.s: countofP_or_sumofN.c.s
-.PHONY : countofP_or_sumofN.s
+main.s: main.c.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-countofP_or_sumofN.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.s
-.PHONY : countofP_or_sumofN.c.s
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeWithCLion.dir/build.make CMakeFiles/CodeWithCLion.dir/main.c.s
+.PHONY : main.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CodeWithCLion"
-	@echo "... countofP_or_sumofN.o"
-	@echo "... countofP_or_sumofN.i"
-	@echo "... countofP_or_sumofN.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

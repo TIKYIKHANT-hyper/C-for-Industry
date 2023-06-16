@@ -1,59 +1,36 @@
 #include <stdio.h>
-
+void staticArrayInit(void);
+void automaticArrayInit(void);
 int main(){
-    FILE *fptr;
-    int id;
-    double balence;
-    char name[20];
-    int option = 0;
-    if((fptr = fopen("/home/user/C-for-Industry/clients.dat","r"))== NULL){
-        printf("Error opening file\n");
+    puts("first call to each function");
+    staticArrayInit();
+    automaticArrayInit();
+    puts("\n\nSecond call to each function");
+    staticArrayInit();
+    automaticArrayInit();
+    puts("");
+}
+
+void staticArrayInit(void){
+    static int array1[3];
+    puts("\nValues on entering to staticArrayInit:");
+    for(size_t i = 0; i <= 2; ++i){
+        printf("array1[%zu] = %d", i , array1[i]);
     }
-    else{
-        printf("%s",
-               "check point\n"
-               "1-Display balence zero accounts\n"
-               "2-Display credit accounts\n"
-               "3-Display debit accounts\n"
-               "4-End Process?\n");
-        scanf("%d",&option);
-        while( option != 4){
-            fscanf(fptr, "%d%s%lf", &id, name, &balence);
-            switch(option){
-                case 1:
-                    printf("%-10s %-13s %s\n", "ID", "Name", "Balence");
-                    while(!feof(fptr)) {
-                        if(balence == 0) {
-                            printf("%-10d %-13s %lf\n", id, name, balence);
-                        }
-                        fscanf(fptr, "%d%s%lf", &id, name, &balence);
-                    }
-                    break;
-                case 2:
-                    printf("%-10s %-13s %s\n", "ID", "Name", "Balence");
-                    while(!feof(fptr)) {
-                        if(balence < 0) {
-                            printf("%-10d %-13s %lf\n", id, name, balence);
-                        }
-                        fscanf(fptr, "%d%s%lf", &id, name, &balence);
-                    }
-                    break;
-                case 3:
-                    printf("%-10s %-13s %s\n", "ID", "Name", "Balence");
-                    while(!feof(fptr)) {
-                        if(balence > 0) {
-                            printf("%-10d %-13s %lf\n", id, name, balence);
-                        }
-                        fscanf(fptr, "%d%s%lf", &id, name, &balence);
-                    }
-                    break;
-            }
-            rewind(fptr);
-            printf("?\n");
-            scanf("%d",&option);
-        }
-        printf("end of run");
-        fclose(fptr);
+    puts("\nValues on exiting staticArrayInit:");
+    for(size_t i = 0; i <= 2; ++i){
+        printf("array1[%zu] = %d ",i , array1[i] += 5);
     }
-    return 0;
+}
+
+void automaticArrayInit(void){
+    int array2[3] = {1,2,3};
+    puts("\n\nValues on entering automaticArrayInit:");
+    for(size_t i = 0; i <= 2; ++i){
+        printf("array2[%zu] = %d ",i,array2[i]);
+    }
+    puts("\nValues on exiting automaticArrayInit:");
+    for(size_t i = 0; i <= 2; ++i){
+        printf("array2[%zu] = %d ",i,array2[i] += 5);
+    }
 }

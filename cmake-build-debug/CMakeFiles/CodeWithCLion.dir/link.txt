@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o -o CodeWithCLion 
+/usr/bin/cc -g CMakeFiles/CodeWithCLion.dir/main.c.o -o CodeWithCLion 

@@ -69,28 +69,28 @@ include CMakeFiles/CodeWithCLion.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CodeWithCLion.dir/flags.make
 
-CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o: CMakeFiles/CodeWithCLion.dir/flags.make
-CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o: /home/user/C-for-Industry/countofP_or_sumofN.c
-CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o: CMakeFiles/CodeWithCLion.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/C-for-Industry/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o -MF CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o.d -o CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o -c /home/user/C-for-Industry/countofP_or_sumofN.c
+CMakeFiles/CodeWithCLion.dir/main.c.o: CMakeFiles/CodeWithCLion.dir/flags.make
+CMakeFiles/CodeWithCLion.dir/main.c.o: /home/user/C-for-Industry/main.c
+CMakeFiles/CodeWithCLion.dir/main.c.o: CMakeFiles/CodeWithCLion.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/C-for-Industry/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CodeWithCLion.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/CodeWithCLion.dir/main.c.o -MF CMakeFiles/CodeWithCLion.dir/main.c.o.d -o CMakeFiles/CodeWithCLion.dir/main.c.o -c /home/user/C-for-Industry/main.c
 
-CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/user/C-for-Industry/countofP_or_sumofN.c > CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.i
+CMakeFiles/CodeWithCLion.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CodeWithCLion.dir/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/user/C-for-Industry/main.c > CMakeFiles/CodeWithCLion.dir/main.c.i
 
-CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/user/C-for-Industry/countofP_or_sumofN.c -o CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.s
+CMakeFiles/CodeWithCLion.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CodeWithCLion.dir/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/user/C-for-Industry/main.c -o CMakeFiles/CodeWithCLion.dir/main.c.s
 
 # Object files for target CodeWithCLion
 CodeWithCLion_OBJECTS = \
-"CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o"
+"CMakeFiles/CodeWithCLion.dir/main.c.o"
 
 # External object files for target CodeWithCLion
 CodeWithCLion_EXTERNAL_OBJECTS =
 
-CodeWithCLion: CMakeFiles/CodeWithCLion.dir/countofP_or_sumofN.c.o
+CodeWithCLion: CMakeFiles/CodeWithCLion.dir/main.c.o
 CodeWithCLion: CMakeFiles/CodeWithCLion.dir/build.make
 CodeWithCLion: CMakeFiles/CodeWithCLion.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/C-for-Industry/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable CodeWithCLion"
